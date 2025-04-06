@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:koi/home/presentation/manager/home_bloc.dart';
+import 'package:koi/home/presentation/manager/home_events.dart';
 import 'package:koi/home/presentation/manager/home_state.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,7 +12,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: BlocProvider(
-        create: (context) => HomeCubit()..getOrders()..getUsers(),
+        create: (context) => HomeCubit()..add(OrdersEvents())..add(UserEvents()),
         child: MultiBlocListener(
           listeners: [
             BlocListener<HomeCubit,HomeState>(listener: (context, state) {

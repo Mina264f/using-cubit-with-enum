@@ -23,7 +23,6 @@ class HomeScreen extends StatelessWidget {
             listenWhen: (previous, current) => previous.userStates!=current.userStates,
             ),
             BlocListener<HomeCubit,HomeState>(listener: (context, state) {
-
               if(state.isOrderSuccess)
               {
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('get order Success')));
