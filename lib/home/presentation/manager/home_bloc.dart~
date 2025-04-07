@@ -20,7 +20,7 @@ class HomeCubit extends Bloc<HomeEvents, HomeState> {
       _search,
       transformer:
           (events, mapper) => events
-              .throttleTime(const Duration(seconds: 10))
+              .throttleTime(const Duration(seconds: 2))
               .switchMap(mapper),
     );
   }

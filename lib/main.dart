@@ -1,7 +1,11 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:koi/home/presentation/pages/home_screen.dart';
 
+import 'bloc_observer.dart';
+
 void main() {
+  Bloc.observer = MyBlocObserver();
   runApp(const Umdf());
 }
 
