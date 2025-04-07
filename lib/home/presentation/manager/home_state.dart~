@@ -22,21 +22,18 @@ class HomeState {
   OrderStates? orderStates;
   UserStates? userStates;
   SearchStates? searchStates;
-  List<String> ?data;
 
-  HomeState({this.userStates, this.orderStates, this.searchStates,this.data});
+  HomeState({this.userStates, this.orderStates, this.searchStates});
 
   HomeState copyWith({
     OrderStates? orderStates,
     UserStates? userStates,
     SearchStates? searchStates,
-    List<String> ? data,
   }) {
     return HomeState(
       orderStates: orderStates ?? this.orderStates,
       userStates: userStates ?? this.userStates,
       searchStates: searchStates ?? this.searchStates,
-      data: data?? this.data
     );
   }
 }
