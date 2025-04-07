@@ -38,8 +38,6 @@ class HomeCubit extends Bloc<HomeEvents, HomeState> {
   }
 
   FutureOr<void> _search(SearchEvents event, Emitter<HomeState> emit) async {
-    print('llllllllllllllllllllllllllllllllllllll');
-    print(event.name);
     emit(state.copyWith(searchStates: SearchStates.loading));
     await Future.delayed(const Duration(seconds: 1));
     emit(state.copyWith(searchStates: SearchStates.success));
